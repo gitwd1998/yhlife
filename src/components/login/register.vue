@@ -9,8 +9,8 @@
       <p>这里是提示信息</p>
     </div>
     <div>
-      <input type="button" value="登录" class="login" @click="$emit('handle-login')">
-      <input type="button" value="注册" class="register" @click="$emit('to-register','register')">
+      <input type="button" value="注册" class="register" @click="$emit('handle-register')">
+      <input type="button" value="登录" class="login" @click="$emit('to-login','login')">
     </div>
   </form>
 </template>

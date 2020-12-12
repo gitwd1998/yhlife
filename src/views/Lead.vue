@@ -11,7 +11,7 @@
     <div class="nav">
       <div class="wrapper">
         <div>
-          <img src="../assets/header_logo.png" alt="" />
+          <img src="../assets/img/header_logo.png" alt="" />
         </div>
         <span><router-link to="/login">注册</router-link></span>
         <span class="pipe">|</span>
@@ -88,7 +88,7 @@ export default {
     }
   }
   .content {
-    background: url("../assets/lead_bg.png") center center no-repeat;
+    background: url("../assets/img/lead_bg.png") center center no-repeat;
     background-size: 100% 100%;
     height: 710px;
     border-bottom: 2px solid #d3d3d3;

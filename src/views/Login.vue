@@ -13,27 +13,37 @@
     <div class="nav">
       <div class="wrapper">
         <div>
-          <img src="../assets/header_logo.png" alt="" />
+          <img src="../assets/img/header_logo.png" alt="" />
         </div>
-        <div class="text">会员登陆</div>
+        <div class="text">{{ page() }}</div>
       </div>
     </div>
     <div class="content">
       <div class="wrapper">
-        <component :is="component"></component>
+        <component
+          :is="component"
+          @to-login="component = $event"
+          @to-register="component = $event"
+        ></component>
       </div>
     </div>
   </div>
 </template>
 <script>
 import login from "../components/login/login";
-import regiest from "../components/login/regiest";
+import register from "../components/login/register";
 export default {
-  components: { login, regiest },
+  components: { login, register },
   data() {
     return {
-      component: login,
+      component: "login",
     };
+  },
+  methods: {
+    page() {
+      if (this.component == "login") return "会员登录";
+      if (this.component == "register") return "会员注册";
+    },
   },
 };
 </script>
@@ -78,7 +88,7 @@ export default {
     }
   }
   .content {
-    background: url("../assets/login_bg.png") center center no-repeat;
+    background: url("../assets/img/login_bg.png") center center no-repeat;
     background-size: 100% 100%;
     height: 570px;
     .wrapper {
